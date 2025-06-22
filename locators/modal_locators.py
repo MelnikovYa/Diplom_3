@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
 
-MODAL_INGREDIENT = (By.XPATH, "//section[contains(@class,'BurgerIngredients_ingredients__')]/div[1]//li[1]//a")
-MODAL = (By.CLASS_NAME, "Modal_modal__")
-CLOSE_BUTTON = (By.CLASS_NAME, "Modal_modal__close_modified__3VxqZ")
+MODAL_INGREDIENT = (By.CSS_SELECTOR, "a.BurgerIngredient_ingredient__1TVf6[draggable='true']")
+MODAL = (By.XPATH, "//div[contains(@class, 'Modal_modal__')]")
+CLOSE_BUTTON = (By.XPATH, "//button[contains(@class, 'Modal_modal__close')]")

@@ -24,3 +24,15 @@ class BasePage:
     @allure.step('Перетащить элемент в корзину')
     def drag_and_drop_element(self, source, target):
         drag_and_drop(self.driver, source, target)
+
+    @allure.step('Подождать появления элемента')
+    def wait_for_element(self, locator):
+        return WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(locator))
+
+    @allure.step('Получить элемент')
+    def get_element(self, locator):
+        return self.driver.find_element(*locator)
+
+    @allure.step('Получить список элементов')
+    def get_elements(self, locator):
+        return self.driver.find_elements(*locator)
